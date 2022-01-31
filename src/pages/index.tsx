@@ -4,6 +4,8 @@ import { getBlogsApi } from '../apis/BlogApi';
 import { BlogItemType } from '../types';
 
 import { TopTemplate } from '../components/pages/TopTemplate';
+import { BlogItem } from '../components/common/molecules/BlogItem';
+import { initialBlogItem } from '../constants/initialState';
 
 type TopPageProps = {
   blogList: BlogItemType[];
