@@ -11,7 +11,11 @@ type TopPageProps = {
 
 const TopPage: NextPage<TopPageProps> = (props: TopPageProps) => {
   const { blogList, totalCount } = props;
-  return <></>;
+
+  // React.useEffect(() => {
+
+  // })
+  return <>aaa</>;
 };
 
 export const getStaticProps: GetStaticProps = async () => {
