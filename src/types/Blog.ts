@@ -1,4 +1,4 @@
-import { ImageType } from "./Image";
+import { ImageType } from './Image';
 
 export type BlogItemType = {
   id: string;
@@ -10,5 +10,10 @@ export type BlogItemType = {
   description: string;
   body: string;
   image: ImageType;
-//   categories: CategoryType[];
+  //   categories: CategoryType[];
+};
+
+export type BlogDataType = {
+  blogList: BlogDataType[];
+  totalCount: number;
 };
