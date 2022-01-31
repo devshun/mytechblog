@@ -4,6 +4,7 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
+  console.log(process.env.X_API_KEY)
   return (
     <div className={styles.container}>
       <Head>
