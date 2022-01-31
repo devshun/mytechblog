@@ -1,7 +1,7 @@
 import { NextPage, GetStaticProps } from 'next';
 import { getBlogsApi } from '../apis/BlogApi';
 
-import { BlogItemType } from '../types/Blog';
+import { BlogItemType } from '../types';
 
 import { TopTemplate } from '../components/pages/TopTemplate';
 

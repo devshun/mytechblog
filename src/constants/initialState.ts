@@ -1,7 +1,7 @@
 // 初期値を定義
 
-import { BlogItemType, BlogDataType } from '../types/Blog';
-import { ImageType } from '../types/Image';
+import { BlogItemType, BlogDataType } from '../types';
+import { ImageType } from '../types';
 
 export const initialImageState: ImageType = {
   url: '',

@@ -6,7 +6,7 @@
 // config
 import globalAxios from '../config/globalAxios';
 
-import { BlogDataType } from '../types/Blog';
+import { BlogDataType } from '../types';
 
 import { initialBlogData } from '../constants/initialState';
 import { BLOG_SHOW_COUNT } from '../constants/config';

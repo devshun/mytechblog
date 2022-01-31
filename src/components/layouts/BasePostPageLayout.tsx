@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { MetaHeadType } from '../../types/MetaHead';
+import { MetaHeadType } from '../../types';
 
 export type Props = {
   children: React.ReactNode;
