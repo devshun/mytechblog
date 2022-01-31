@@ -1,6 +1,6 @@
-import { ImageProps } from "./Image";
+import { ImageType } from "./Image";
 
-export type BlogItemProps = {
+export type BlogItemType = {
   id: string;
   createdAt: string;
   updatedAt: string;
@@ -9,6 +9,6 @@ export type BlogItemProps = {
   title: string;
   description: string;
   body: string;
-  image: ImageProps;
-//   categories: CategoryProps[];
+  image: ImageType;
+//   categories: CategoryType[];
 };
