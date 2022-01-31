@@ -3,10 +3,11 @@ import { getBlogsApi } from '../apis/BlogApi';
 
 import { BlogItemType } from '../types/Blog';
 
+import { TopTemplate } from '../components/pages/TopTemplate';
+
 type TopPageProps = {
   blogList: BlogItemType[];
   totalCount: number;
-  // profile: Profile;
 };
 
 const TopPage: NextPage<TopPageProps> = (props: TopPageProps) => {
@@ -15,7 +16,7 @@ const TopPage: NextPage<TopPageProps> = (props: TopPageProps) => {
   // React.useEffect(() => {
 
   // })
-  return <>aaa</>;
+  return <TopTemplate />;
 };
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -25,7 +26,6 @@ export const getStaticProps: GetStaticProps = async () => {
   const props: TopPageProps = {
     blogList: blogData.blogList,
     totalCount: blogData.totalCount,
-    // profile: profile,
   };
 
   return { props };
