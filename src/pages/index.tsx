@@ -18,7 +18,16 @@ const TopPage: NextPage<TopPageProps> = (props: TopPageProps) => {
   // React.useEffect(() => {
 
   // })
-  return <TopTemplate />;
+
+  return (
+    <>
+      <ul>
+        {blogList.map((blog, i) => (
+          <li>{blog.title}</li>
+        ))}
+      </ul>
+    </>
+  );
 };
 
 export const getStaticProps: GetStaticProps = async () => {
