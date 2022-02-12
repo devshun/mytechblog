@@ -1,9 +1,22 @@
-import React from 'react';
+import React, { ButtonHTMLAttributes } from 'react';
 
-type Props = {
-    
-}
+export type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
+  children: React.ReactNode;
+  size: 'small' | 'medium' | 'large';
+};
 
-export const Button: React.FC<Props> = () => {
-  return <div></div>;
+export const Button: React.FC<Props> = (props) => {
+  const { children, className, size = "medium", ...rest } = props;
+  const classes = [className, sizeClasses[size]].join(' ');
+  return (
+    <button className={classes} {...rest}>
+      {children}
+    </button>
+  );
+};
+
+const sizeClasses = {
+  small: '',
+  medium: '',
+  large: '',
 };
