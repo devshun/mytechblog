@@ -4,7 +4,7 @@ import React, { useCallback } from 'react';
 import { setBlogList, useBlogDispatch } from '../contexts/BlogContext';
 import { BlogItemType } from '../types';
 
-export const useSetData = useCallback(() => {
+export const useSetData = () => {
   const dispatchBlog = useBlogDispatch();
 
   const setBlogData = React.useCallback(
@@ -14,5 +14,5 @@ export const useSetData = useCallback(() => {
     [dispatchBlog]
   );
 
-  return [{ setBlogData }];
-}, []);
+  return { setBlogData };
+};

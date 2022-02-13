@@ -1,5 +1,5 @@
 import React from 'react';
-/* types */
+
 import { BlogItemType } from '../types';
 
 export type BlogStateType = {

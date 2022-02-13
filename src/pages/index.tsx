@@ -1,11 +1,13 @@
 import { NextPage, GetStaticProps } from 'next';
+import React from 'react';
+
 import { getBlogsApi } from '../apis/BlogApi';
 
 import { BlogItemType } from '../types';
 
 import { TopTemplate } from '../components/pages/TopTemplate';
-import { BlogItem } from '../components/common/molecules/BlogItem';
-import { initialBlogItem } from '../constants/initialState';
+
+import { useSetData } from '../hooks/useSetData';
 
 type TopPageProps = {
   blogList: BlogItemType[];
@@ -15,19 +17,13 @@ type TopPageProps = {
 const TopPage: NextPage<TopPageProps> = (props: TopPageProps) => {
   const { blogList, totalCount } = props;
 
-  // React.useEffect(() => {
+  const { setBlogData } = useSetData();
 
-  // })
+  React.useEffect(() => {
+    setBlogData(blogList, totalCount);
+  }, [blogList, totalCount, setBlogData]);
 
-  return (
-    <>
-      <ul>
-        {blogList.map((blog, i) => (
-          <li>{blog.title}</li>
-        ))}
-      </ul>
-    </>
-  );
+  return <TopTemplate />;
 };
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -38,7 +34,6 @@ export const getStaticProps: GetStaticProps = async () => {
     blogList: blogData.blogList,
     totalCount: blogData.totalCount,
   };
-
   return { props };
 };
 
