@@ -4,9 +4,9 @@
 
 @layer base {
  body{
-   @apply bg-black
+   @apply bg-neutral-900 
  }
  div {
-   @apply text-gray-300 border-gray-600
+   @apply text-gray-100 border-gray-600
  }
 }
