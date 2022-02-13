@@ -1,32 +1,36 @@
-import React from 'react';
+import React, { memo } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
 import { BlogItemType } from '../../../types';
 
+import { Text } from '../atoms/Text';
+
 type Props = {
   blogItem: BlogItemType;
 };
 
-export const BlogItem: React.FC<Props> = (props: Props) => {
+export const BlogItem: React.FC<Props> = memo((props: Props) => {
   const { blogItem } = props;
 
   return (
     <Link href='[blogId]' as={`/${blogItem.id}`}>
-      <div className='flex cursor-pointer py-2.5 px-5 mb-16'>
-        <div className='min-w-330 max-w-330 overflow-hidden drop-shadow rounded-sm delay-50 hover:opacity-50 hover:scale-110 '>
-          <Image
-            src={blogItem.image.url}
+      <div className='h-80 w-72 mb-10 flex flex-col  p-5 border rounded-2xl cursor-pointer bg-neutral-800 mx-auto'>
+        <div className='p-2'>
+          <Text>{blogItem.title}</Text>
+        </div>
+        {/* <div className='hover:scale-110 transition-all'>
+          <img
+            src={"https://shop38-makeshop.akamaized.net/shopimages/pgsentame/000000078988_vIep3W4.jpg"}
             alt='Picture'
-            width={blogItem.image.width * 2}
-            height={blogItem.image.height * 2}
+            // width={blogItem.image.width * 2}
+            // height={blogItem.image.height * 2}
+            width={"200px"}
+            height={"100px"}
+
           />
-        </div>
-        <div className='ml-5'>
-          <h2 className='pt-1 text-lg font-bold tracking-widest leading-6'>{blogItem.title}</h2>
-        </div>
-        <div className='mt-4'>2021/10/11</div>
+        </div> */}
       </div>
     </Link>
   );
-};
+});
