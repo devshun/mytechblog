@@ -1,21 +1,19 @@
-import React, { useReducer } from 'react';
-
-import { BlogItemType, BlogDataType } from '../types';
-
-import { initialBlogData } from '../constants/initialState';
+import React from 'react';
+/* types */
+import { BlogItemType } from '../types';
 
 export type BlogStateType = {
   blogList: BlogItemType[];
   totalCount: number;
 };
 
-const initialState: Readonly<BlogStateType> = {
+const initState: Readonly<BlogStateType> = {
   blogList: [],
   totalCount: 0,
 };
 
 const ActionType = {
-  SET: 'SET_BLOG',
+  SET: 'BLOG:SET_BLOG',
 };
 
 export const setBlogList = (blogList: BlogItemType[], totalCount: number) => ({
@@ -28,7 +26,7 @@ export const setBlogList = (blogList: BlogItemType[], totalCount: number) => ({
 
 type BlogActionType = ReturnType<typeof setBlogList>;
 
-const BlogReducer = (state: BlogDataType, action: BlogActionType) => {
+const BlogReducer = (state: BlogStateType, action: BlogActionType) => {
   switch (action.type) {
     case ActionType.SET:
       return {
@@ -37,23 +35,23 @@ const BlogReducer = (state: BlogDataType, action: BlogActionType) => {
         totalCount: action.payload.totalCount,
       };
     default:
-      throw new Error('Invalid Action Type');
+      throw new Error('Invalid Action Type.');
   }
 };
 
 type BlogDispatchType = React.Dispatch<BlogActionType>;
-//  要確認
-const BlogStateContext = React.createContext(initialBlogData as BlogDataType);
+const BlogStateContext = React.createContext(initState as BlogStateType);
 const BlogDispatchContext = React.createContext<BlogDispatchType>(() => {
-  throw new TypeError('Context not provided');
+  throw new TypeError('Context not provided.');
 });
 
+// ContextProviderType --------------
 type Props = {
   children: React.ReactNode;
 };
 
 export const BlogContextProvider: React.FC<Props> = ({ children }: Props) => {
-  const [state, dispatch] = useReducer(BlogReducer, initialState);
+  const [state, dispatch] = React.useReducer(BlogReducer, initState);
 
   return (
     <BlogDispatchContext.Provider value={dispatch}>
