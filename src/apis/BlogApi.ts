@@ -8,7 +8,7 @@ import globalAxios from '../config/globalAxios';
 
 import { BlogDataType } from '../types';
 
-import { initialBlogData } from '../constants/initialState';
+import { initialBlogData, initialBlogItem } from '../constants/initialState';
 import { BLOG_SHOW_COUNT } from '../constants/config';
 
 const BASE_URL = `${process.env.NEXT_PUBLIC_BASE_URL}/blogs/`;
@@ -26,9 +26,21 @@ export const getBlogsApi = async (offset: number): Promise<BlogDataType> => {
     blogData.blogList = res.data.contents;
     blogData.totalCount = res.data.totalCount;
   } catch (error) {
-      console.log(error)
+    console.log(error);
     throw new Error('API ERROR: getBlogsApi');
   }
 
   return blogData;
+};
+
+export const getBlogByIdApi = async (id: string, draftKey: string) => {
+  let blogDetail = initialBlogItem;
+  try {
+    const res = await globalAxios.get(`${BASE_URL}${id}${draftKey !== '' ? draftKey : ''}`);
+    blogDetail = res.data;
+  } catch (e) {
+    throw new Error('API ERROR: getBlogByIdApi');
+  }
+  console.log(blogDetail);
+  return blogDetail;
 };
