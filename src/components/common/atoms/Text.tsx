@@ -2,7 +2,7 @@ import React, { HTMLAttributes, memo } from 'react';
 
 export type Props = HTMLAttributes<HTMLDivElement> & {
   children: React.ReactNode;
-  size?: 'small' | 'medium' | 'large';
+  size?: 'xsmall' | 'small' | 'medium' | 'large';
 };
 
 export const Text: React.FC<Props> = memo((props) => {
@@ -16,6 +16,7 @@ export const Text: React.FC<Props> = memo((props) => {
 });
 
 export const sizeClasses = {
+  xsmall: 'text-xs',
   small: 'text-sm',
   medium: 'text-lg font-bold',
   large: 'text-2xl font-bold',
