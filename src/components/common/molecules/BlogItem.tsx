@@ -17,17 +17,17 @@ export const BlogItem: React.FC<Props> = memo((props: Props) => {
 
   return (
     <Link href='[blogId]' as={`/${blogItem.id}`}>
-      <div className='h-80 w-80 mb-10 flex flex-col justify-between border rounded-2xl cursor-pointer bg-neutral-800 mx-auto hover:border-gray-500  hover:scale-105 transition-all'>
-        <div className='h-2/5 flex flex-col justify-between my-3'>
+      <div className='h-80 w-80 mb-10 flex flex-col justify-between border rounded-2xl cursor-pointer bg-neutral-800 mx-auto hover:border-gray-500'>
+        <div className='h-2/5 flex flex-col justify-between mt-1'>
           <Text className='px-8 py-6'>{blogItem.title}</Text>
           <Text size='xsmall' className='text-gray-400 text-center'>
             {format(parseISO(blogItem.publishedAt), 'yyyy/MM/dd')}
           </Text>
         </div>
-        <div className='overflow-hidden flex mx-auto items-center h-3/5 w-9/10 p-3'>
+        <div className='overflow-hidden h-3/5 w-9/10 flex items-center rounded-2xl mx-3 my-2'>
           {blogItem.image && (
             <Image
-              className='rounded-md'
+              className=' z-1 hover:scale-105 transition-all'
               src={blogItem.image.url}
               alt='Picture'
               width={blogItem.image.width * 2}
