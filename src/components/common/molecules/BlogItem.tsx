@@ -15,10 +15,9 @@ type Props = {
 export const BlogItem: React.FC<Props> = memo((props: Props) => {
   const { blogItem } = props;
 
-  console.log(blogItem);
   return (
     <Link href='[blogId]' as={`/${blogItem.id}`}>
-      <div className='h-80 w-80 mb-10 flex flex-col justify-between border rounded-2xl cursor-pointer bg-neutral-800 mx-auto hover:scale-105 transition-all'>
+      <div className='h-80 w-80 mb-10 flex flex-col justify-between border rounded-2xl cursor-pointer bg-neutral-800 mx-auto hover:border-gray-500  hover:scale-105 transition-all'>
         <div className='h-2/5 flex flex-col justify-between my-3'>
           <Text className='px-8 py-6'>{blogItem.title}</Text>
           <Text size='xsmall' className='text-gray-400 text-center'>
