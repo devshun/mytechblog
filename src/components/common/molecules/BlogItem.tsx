@@ -2,9 +2,9 @@ import React, { memo } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { BlogItemType } from '../../../types';
+import { BlogItemType } from '@/types';
 
-import { Text } from '../atoms/Text';
+import { Text } from '@/components/common/atoms/Text';
 
 import { format, parseISO } from 'date-fns';
 

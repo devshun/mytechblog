@@ -10,7 +10,8 @@ export type Props = HTMLAttributes<HTMLDivElement> & {
 export const Text: React.FC<Props> = memo((props) => {
   const { children, className, size = 'medium', ...rest } = props;
   const classes = classNames(className, sizeClasses[size]);
-  return (
+  
+return (
     <div className={classes} {...rest}>
       {children}
     </div>

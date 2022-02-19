@@ -10,7 +10,8 @@ export type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
 export const Button: React.FC<Props> = memo((props) => {
   const { children, className, size = 'medium', ...rest } = props;
   const classes = classNames(baseClasses, className, sizeClasses[size]);
-  return (
+  
+return (
     <button className={classes} {...rest}>
       {children}
     </button>

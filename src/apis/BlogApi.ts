@@ -1,15 +1,9 @@
-/**
- * BlogApi.ts
- * @package apis
- */
+import globalAxios from '@/config/globalAxios';
 
-// config
-import globalAxios from '../config/globalAxios';
+import { BlogDataType } from '@/types';
 
-import { BlogDataType } from '../types';
-
-import { initialBlogData, initialBlogItem } from '../constants/initialState';
-import { BLOG_SHOW_COUNT } from '../constants/config';
+import { initialBlogData, initialBlogItem } from '@/constants/initialState';
+import { BLOG_SHOW_COUNT } from '@/constants/config';
 
 const BASE_URL = `${process.env.NEXT_PUBLIC_BASE_URL}/blogs/`;
 // const BASE_URL = `${process.env.NEXT_PUBLIC_BASE_URL || 'https://localhost:3000/'}/blogs/`;
@@ -36,11 +30,14 @@ export const getBlogsApi = async (offset: number): Promise<BlogDataType> => {
 export const getBlogByIdApi = async (id: string, draftKey: string) => {
   let blogDetail = initialBlogItem;
   try {
-    const res = await globalAxios.get(`${BASE_URL}${id}${draftKey !== '' ? draftKey : ''}`);
+    const res = await globalAxios.get(
+      `${BASE_URL}${id}${draftKey !== '' ? draftKey : ''}`
+    );
     blogDetail = res.data;
   } catch (e) {
     throw new Error('API ERROR: getBlogByIdApi');
   }
   console.log(blogDetail);
-  return blogDetail;
+  
+return blogDetail;
 };

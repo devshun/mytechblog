@@ -1,8 +1,8 @@
-import '../styles/globals.css';
+import '@/styles/globals.css';
 import 'tailwindcss/tailwind.css';
 
 import type { AppProps } from 'next/app';
-import { RootContextProvider } from '../contexts';
+import { RootContextProvider } from '@/contexts';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

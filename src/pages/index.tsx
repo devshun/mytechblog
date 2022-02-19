@@ -1,13 +1,13 @@
 import { NextPage, GetStaticProps } from 'next';
 import React from 'react';
 
-import { getBlogsApi } from '../apis/BlogApi';
+import { getBlogsApi } from '@/apis/BlogApi';
 
-import { BlogItemType } from '../types';
+import { BlogItemType } from '@/types';
 
-import { TopTemplate } from '../components/pages/TopTemplate';
+import { TopTemplate } from '@/components/pages/TopTemplate';
 
-import { useSetData } from '../hooks/useSetData';
+import { useSetData } from '@/hooks/useSetData';
 
 type TopPageProps = {
   blogList: BlogItemType[];
@@ -34,7 +34,8 @@ export const getStaticProps: GetStaticProps = async () => {
     blogList: blogData.blogList,
     totalCount: blogData.totalCount,
   };
-  return { props };
+  
+return { props };
 };
 
 export default TopPage;

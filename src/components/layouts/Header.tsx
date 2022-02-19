@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React, { useLayoutEffect } from 'react';
-import { Button } from '../common/atoms/Button';
-import { Text } from '../common/atoms/Text';
+import { Button } from '@/components/common/atoms/Button';
+import { Text } from '@/components/common/atoms/Text';
 
 type Props = {};
 

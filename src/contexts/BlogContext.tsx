@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { BlogItemType } from '../types';
+import { BlogItemType } from '@/types';
 
 export type BlogStateType = {
   blogList: BlogItemType[];
@@ -55,7 +55,9 @@ export const BlogContextProvider: React.FC<Props> = ({ children }: Props) => {
 
   return (
     <BlogDispatchContext.Provider value={dispatch}>
-      <BlogStateContext.Provider value={state}>{children}</BlogStateContext.Provider>
+      <BlogStateContext.Provider value={state}>
+        {children}
+      </BlogStateContext.Provider>
     </BlogDispatchContext.Provider>
   );
 };

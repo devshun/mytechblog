@@ -1,8 +1,8 @@
 //
 
 import React, { useCallback } from 'react';
-import { setBlogList, useBlogDispatch } from '../contexts/BlogContext';
-import { BlogItemType } from '../types';
+import { setBlogList, useBlogDispatch } from '@/contexts/BlogContext';
+import { BlogItemType } from '@/types';
 
 export const useSetData = () => {
   const dispatchBlog = useBlogDispatch();
