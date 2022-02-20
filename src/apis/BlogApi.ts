@@ -38,6 +38,6 @@ export const getBlogByIdApi = async (id: string, draftKey: string) => {
     throw new Error('API ERROR: getBlogByIdApi');
   }
   console.log(blogDetail);
-  
-return blogDetail;
+
+  return blogDetail;
 };
