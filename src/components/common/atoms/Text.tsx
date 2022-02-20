@@ -1,4 +1,4 @@
-import React, { HTMLAttributes, memo } from 'react';
+import React, { HTMLAttributes, forwardRef, ReactElement } from 'react';
 
 import classNames from 'classnames';
 
@@ -7,16 +7,18 @@ export type Props = HTMLAttributes<HTMLDivElement> & {
   size?: 'xsmall' | 'small' | 'medium' | 'large';
 };
 
-export const Text: React.FC<Props> = memo((props) => {
-  const { children, className, size = 'medium', ...rest } = props;
-  const classes = classNames(className, sizeClasses[size]);
-  
-return (
-    <div className={classes} {...rest}>
-      {children}
-    </div>
-  );
-});
+export const Text = forwardRef<HTMLDivElement, Props>(
+  (props, ref?): ReactElement => {
+    const { children, className, size = 'medium', ...rest } = props;
+    const classes = classNames(className, sizeClasses[size]);
+
+    return (
+      <div className={classes} {...rest} ref={ref}>
+        {children}
+      </div>
+    );
+  }
+);
 
 export const sizeClasses = {
   xsmall: 'text-xs',
