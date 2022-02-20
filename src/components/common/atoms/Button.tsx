@@ -3,7 +3,7 @@ import React, { ButtonHTMLAttributes, forwardRef, ReactElement } from 'react';
 import classNames from 'classnames';
 
 export type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
-  children?: React.ReactNode;
+  children: React.ReactNode;
   size?: 'small' | 'medium' | 'large';
 };
 
