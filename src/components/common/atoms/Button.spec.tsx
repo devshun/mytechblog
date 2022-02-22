@@ -35,7 +35,6 @@ describe('【コンポーネントテスト】 Button', () => {
   //  todo
   it('should be apply disabled props', async () => {});
 
-  //   onClick eventのバインドテスト
   it('should be call onClick event', async () => {
     const mockOnClick = jest.fn();
     renderComponent({ onClick: mockOnClick });

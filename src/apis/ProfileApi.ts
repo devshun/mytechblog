@@ -1,1 +1,2 @@
-//  profile api
+export const profileApi = () => {};
+
