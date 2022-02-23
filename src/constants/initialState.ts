@@ -9,14 +9,14 @@ export const initialImageState: ImageType = {
 };
 
 export const initialBlogItem: BlogItemType = {
-  id: 'test',
-  createdAt: 'test',
-  updatedAt: 'test',
-  publishedAt: 'test',
-  revisedAt: 'test',
-  title: 'test',
-  body: 'test',
-  description: 'test',
+  id: '',
+  createdAt: '',
+  updatedAt: '',
+  publishedAt: '',
+  revisedAt: '',
+  title: '',
+  body: '',
+  description: '',
   image: initialImageState,
 };
 
