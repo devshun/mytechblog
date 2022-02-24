@@ -6,7 +6,7 @@ import Link from 'next/link';
 export type Props = HTMLAttributes<HTMLDivElement> & {
   children: React.ReactNode;
   size?: 'xsmall' | 'small' | 'medium' | 'large';
-  url: string;
+  url?: string;
 };
 
 export const Text = forwardRef<HTMLDivElement, Props>(
